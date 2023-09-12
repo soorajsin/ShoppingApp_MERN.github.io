@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { ContextNavigate } from "../ContextProvider/Context";
 
 const Dashboad = () => {
-  const { userdata, setUserData } = useContext(ContextNavigate);
-  //   console.log(userdata);
+  const {  setUserData } = useContext(ContextNavigate);
+    // console.log(userdata);
 
   const history = useNavigate();
 
@@ -24,7 +24,7 @@ const Dashboad = () => {
     //     console.log(res);
 
     if (res.status === 205) {
-      console.log(res);
+      // console.log(res);
       setUserData(res);
       // history("/home");
     } else {
@@ -39,7 +39,9 @@ const Dashboad = () => {
 
   return (
     <>
-      <div className="dash"></div>
+      <div className="dash">
+      
+      </div>
     </>
   );
 };
