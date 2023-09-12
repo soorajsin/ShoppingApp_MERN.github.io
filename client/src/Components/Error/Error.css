@@ -1,0 +1,14 @@
+*{
+          margin: 0;
+          padding: 0;
+}
+.error{
+          width: 100%;
+          text-align: center;
+}
+.error img{
+          width: 60%;
+}
+.error h3{
+          font-size: 40px;
+}

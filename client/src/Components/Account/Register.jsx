@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import "./mix.css";
 
 const Register = () => {
   const [inpVal, setInpVal] = useState({

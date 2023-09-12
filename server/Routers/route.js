@@ -2,6 +2,7 @@ const express = require("express");
 const router = new express.Router();
 const userdb = require("../Model/userSchema");
 const bcrypt = require("bcryptjs");
+const authentication=require("../Middleware/Authentication");
 
 
 router.post("/register", async (req, res) => {
@@ -119,6 +120,27 @@ router.post("/login", async (req, res) => {
           } catch (error) {
                     res.status(422).json({
                               error: "Internal Server Error"
+                    })
+          }
+});
+
+
+
+router.get("/validUser", authentication, async (req, res) => {
+          // console.log("done");
+
+          if (req.getData) {
+                    // console.log("done");
+                    res.status(201).json({
+                              status: 205,
+                              message: "User Authenticate",
+                              getData: req.getData
+                    })
+
+          } else {
+                    // console.log("no");
+                    res.status(422).json({
+                              error: "User data not found"
                     })
           }
 })
