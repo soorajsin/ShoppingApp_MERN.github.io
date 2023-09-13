@@ -70,7 +70,7 @@ const Navbar = () => {
                     style={{ color: "#fff", textDecoration: "none" }}
                     to={"/cart"}
                   >
-                    Cart
+                    <i className="fa-solid fa-cart-shopping"></i>
                   </NavLink>
                 </button>
               </div>

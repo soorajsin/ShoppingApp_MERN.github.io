@@ -2,7 +2,7 @@ const express = require("express");
 const router = new express.Router();
 const userdb = require("../Model/userSchema");
 const bcrypt = require("bcryptjs");
-const authentication=require("../Middleware/Authentication");
+const authentication = require("../Middleware/Authentication");
 
 
 router.post("/register", async (req, res) => {
@@ -141,6 +141,42 @@ router.get("/validUser", authentication, async (req, res) => {
                     // console.log("no");
                     res.status(422).json({
                               error: "User data not found"
+                    })
+          }
+});
+
+
+router.post("/addToCart", authentication, async (req, res) => {
+          // console.log(req.body);
+          try {
+                    const {
+                              card
+                    } = req.body;
+                    // console.log(req.body);
+
+                    if (card === "") {
+                              return res.status(422).json({
+                                        error: "Card Details not found"
+                              })
+                    } else {
+                              // console.log("yes");
+
+                              const user = req.getData;
+                              // console.log(user);
+
+                              if (!user) {
+                                        res.status(422).json({
+                                                  error: "No User Found"
+                                        })
+                              } else {
+                                        // console.log("yse");
+
+                              }
+                    }
+
+          } catch (error) {
+                    res.status(422).json({
+                              error: "Internal Server Error"
                     })
           }
 })
