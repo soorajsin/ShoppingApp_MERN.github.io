@@ -53,39 +53,41 @@ const Navbar = () => {
                 </NavLink>
               </button>
             </div>
-            <div className="tab">
-              <button className="btn btn-primary">
-                <NavLink
-                  style={{ color: "#fff", textDecoration: "none" }}
-                  to={"/login"}
-                >
-                  Login
-                </NavLink>
-              </button>
-            </div>
-            <div className="tab">
-              <button className="btn btn-primary">
-                <NavLink
-                  style={{ color: "#fff", textDecoration: "none" }}
-                  to={"/cart"}
-                >
-                  Cart
-                </NavLink>
-              </button>
-            </div>
-            <div className="tab">
-              <button className="btn btn-primary">
-                <NavLink
-                  style={{ color: "#fff", textDecoration: "none" }}
-                  to={"/cart"}
-                >
-                  <Avatar sx={{ bgcolor: deepOrange[500], fontSize: "30px" }}>
-                    {userdata
-                      ? userdata.getData.email.charAt(0).toUpperCase()
-                      : "S"}
-                  </Avatar>
-                </NavLink>
-              </button>
+            <div className="container">
+              <div className="tab">
+                <button className="btn btn-primary">
+                  <NavLink
+                    style={{ color: "#fff", textDecoration: "none" }}
+                    to={"/login"}
+                  >
+                    Login
+                  </NavLink>
+                </button>
+              </div>
+              <div className="tab">
+                <button className="btn btn-primary">
+                  <NavLink
+                    style={{ color: "#fff", textDecoration: "none" }}
+                    to={"/cart"}
+                  >
+                    Cart
+                  </NavLink>
+                </button>
+              </div>
+              <div className="tab">
+                <button className="btn btn-primary">
+                  <NavLink
+                    style={{ color: "#fff", textDecoration: "none" }}
+                    to={"/cart"}
+                  >
+                    <Avatar sx={{ bgcolor: deepOrange[500], fontSize: "30px" }}>
+                      {userdata
+                        ? userdata.getData.email.charAt(0).toUpperCase()
+                        : "S"}
+                    </Avatar>
+                  </NavLink>
+                </button>
+              </div>
             </div>
           </Toolbar>
         </AppBar>
